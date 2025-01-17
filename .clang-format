@@ -1,0 +1,6 @@
+BasedOnStyle: Google
+IndentWidth: 4
+TabWidth: 4
+ColumnLimit: 99
+BreakBeforeBraces: Attach
+NamespaceIndentation: All
