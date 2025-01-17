@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.30)
-project(webrtcAGC
+project(audioProcessor
     VERSION 1.0.0
-    DESCRIPTION "WebRTC AudioGainControl"
+    DESCRIPTION "Audio Gain Controller using WebRTC - GainController2"
     LANGUAGES CXX
 )
 
@@ -15,9 +15,9 @@ elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     add_compile_options(/W4)
 endif()
 
-add_executable(webrtcAGC src/main.cpp src/audioProcessor.cpp)
+add_executable(audioProcessor src/main.cpp src/audioProcessor.cpp)
 add_definitions(-DWEBRTC_APM_DEBUG_DUMP=0)
 
-target_include_directories(webrtcAGC PRIVATE src/ thirdparty/agc/include thirdparty/agc/include/webrtc thirdparty/agc/include/webrtc/modules/audio_processing)
-target_link_directories(webrtcAGC PRIVATE thirdparty/agc/lib)
-target_link_libraries(webrtcAGC PRIVATE webrtc-audio-processing-2)
+target_include_directories(audioProcessor PRIVATE src/ thirdparty/agc/include thirdparty/agc/include/webrtc thirdparty/agc/include/webrtc/modules/audio_processing)
+target_link_directories(audioProcessor PRIVATE thirdparty/agc/lib)
+target_link_libraries(audioProcessor PRIVATE webrtc-audio-processing-2)
